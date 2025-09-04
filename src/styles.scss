@@ -61,6 +61,10 @@ section, form {
   padding: 3vh;
 }
 
+mat-form-field {
+    width: 100%;
+}
+
 @media (max-width: 768px) {
   section, form {
     width: 100vw;
