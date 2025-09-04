@@ -2,23 +2,25 @@
 
     <form #formularioDeLogin="ngForm" (ngSubmit)="onSubmit(formularioDeLogin)" novalidate>
 
-        <mat-form-field>
-            <mat-label>Login</mat-label>
-            <input matInput
-                type="text" 
-                name="nome"
-                [(ngModel)]="login"
-                required>
-        </mat-form-field>
+        <div class="input-fields">
+            <mat-form-field>
+                <mat-label>Login</mat-label>
+                <input matInput
+                    type="text" 
+                    name="nome"
+                    [(ngModel)]="login"
+                    required>
+            </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Senha</mat-label>
-            <input matInput
-                type="password" 
-                name="senha"
-                [(ngModel)]="senha"
-                required>
-        </mat-form-field>
+            <mat-form-field>
+                <mat-label>Senha</mat-label>
+                <input matInput
+                    type="password" 
+                    name="senha"
+                    [(ngModel)]="senha"
+                    required>
+            </mat-form-field>
+        </div>
 
         <button matButton="filled" type="submit" [disabled]="!formularioDeLogin.valid">
             Efetuar login

@@ -4,7 +4,7 @@ import { Login } from './model/login';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Telefone } from './model/telefone';
-import { Token } from './model/token';
+import { TokenJwt } from './model/token-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ export class AutenticacaoService {
     private http: HttpClient
   ) {}
 
-  login(login: Login): Observable<Token> {
-    return this.http.post<Token>(`${environment.apiUrl}/login`, login)
+  login(login: Login): Observable<TokenJwt> {
+    return this.http.post<TokenJwt>(`${environment.apiUrl}/login`, login)
   }
 
   getTelefone(): Observable<Telefone> {

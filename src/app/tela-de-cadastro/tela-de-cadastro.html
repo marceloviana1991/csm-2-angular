@@ -12,49 +12,52 @@
             <button matButton type="button" (click)="fileInput.click()">Selecionar imagem</button>
         </div>
         
-        <mat-form-field>
-            <mat-label>Categoria</mat-label>
-            <mat-select
-                [(ngModel)]="grupoSelecionado" 
-                name="grupo" 
-                required>
-                @for (grupo of grupos; track grupo.id) {
-                    <mat-option [value]="grupo">
-                        {{ grupo.nome }}
-                    </mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
+        <div class="input-fields">
+            <mat-form-field>
+                <mat-label>Categoria</mat-label>
+                <mat-select
+                    [(ngModel)]="grupoSelecionado" 
+                    name="grupo" 
+                    required>
+                    @for (grupo of grupos; track grupo.id) {
+                        <mat-option [value]="grupo">
+                            {{ grupo.nome }}
+                        </mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Nome</mat-label>
-            <input matInput
-                type="text" 
-                name="nome"
-                [(ngModel)]="nome"
-                required>
-        </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input matInput
+                    type="text" 
+                    name="nome"
+                    [(ngModel)]="nome"
+                    required>
+            </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Preço</mat-label>
-            <input matInput
-                type="number" 
-                name="preco"
-                [(ngModel)]="preco"
-                required
-                step="0.01"
-                placeholder="0,00" inputmode="decimal">
-        </mat-form-field>
+            <mat-form-field>
+                <mat-label>Preço</mat-label>
+                <input matInput
+                    type="number" 
+                    name="preco"
+                    [(ngModel)]="preco"
+                    required
+                    step="0.01"
+                    placeholder="0,00" inputmode="decimal">
+            </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Quantidade em estoque</mat-label>
-            <input matInput
-                type="number" 
-                name="quantidadeEmEstoque"
-                [(ngModel)]="quantidadeEmEstoque"
-                required
-                placeholder="0" inputmode="numeric">
-        </mat-form-field>
+            <mat-form-field>
+                <mat-label>Quantidade em estoque</mat-label>
+                <input matInput
+                    type="number" 
+                    name="quantidadeEmEstoque"
+                    [(ngModel)]="quantidadeEmEstoque"
+                    required
+                    placeholder="0" inputmode="numeric">
+            </mat-form-field>
+        </div>
+        
 
         <button matButton="filled" type="submit" [disabled]="!formularioDeCadastro.valid || !arquivo">
             Cadastrar

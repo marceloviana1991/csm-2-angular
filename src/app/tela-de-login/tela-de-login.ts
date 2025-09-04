@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Login } from '../client-http/model/login';
-import { Token } from '../client-http/model/token';
+import { TokenJwt } from '../client-http/model/token-jwt';
 
 
 @Component({
@@ -34,7 +34,7 @@ export class TelaDeLogin {
       password: this.senha!
     }
     this.autenticacaoService.login(login).subscribe({
-      next: (token: Token) => {
+      next: (token: TokenJwt) => {
         this.openSnackBar('Autenticação realizada com sucesso!')
         sessionStorage.setItem('token', token.token)
         formularioDeLogin.resetForm()
