@@ -1,0 +1,22 @@
+.input-fields {
+    margin-bottom: 3vh;
+    width: 100%;
+}
+
+img {
+    width: 60%;
+}
+
+.input-img-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3vh;
+    gap: 2vh;
+}
+
+.submit-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}

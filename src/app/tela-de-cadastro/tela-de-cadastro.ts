@@ -36,7 +36,7 @@ export class TelaDeCadastro implements OnInit {
   constructor(
     private grupoService: GrupoService,
     private materialService: MaterialService,
-    private snakbar: MatSnackBar,
+    private snakbar: MatSnackBar
   ) {}
 
   ngOnInit(): void {

@@ -1,0 +1,90 @@
+<section>
+
+    <div class="input-fields">
+        <mat-form-field>
+            <mat-label>Categoria</mat-label>
+            <mat-select
+                name="grupo"
+                (selectionChange)="onGrupoSelecionado($event)">
+                @for (grupo of grupos; track grupo.id) {
+                    <mat-option [value]="grupo.id">
+                        {{ grupo.nome }}
+                    </mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <mat-label>Material</mat-label>
+            <mat-select
+                name="material" 
+                (selectionChange)="onMaterialSelecionado($event)">
+                @for (material of materiaisPorGrupo; track material.id) {
+                    <mat-option [value]="material">
+                        {{ material.nome }}
+                    </mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    @if (materialSelecionado) {
+        <form #formularioDeEdicao="ngForm" (ngSubmit)="onSubmit(formularioDeEdicao)" novalidate>
+
+            <div class="input-img-field">
+                <img [src]="imagem">
+                <input hidden 
+                    type="file" 
+                    #fileInput
+                    accept="image/*"
+                    (change)="onFileSelected($event)">
+                <button matButton type="button" (click)="fileInput.click()">Selecionar imagem</button>
+            </div>  
+            
+            <div class="input-fields">
+                <mat-form-field>
+                    <mat-label>Nome</mat-label>
+                    <input matInput
+                        type="text" 
+                        name="nome"
+                        [(ngModel)]="materialSelecionado.nome"
+                        required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Preço</mat-label>
+                        <input matInput
+                            type="number" 
+                            name="preco"
+                            [(ngModel)]="materialSelecionado.preco"
+                            required
+                            step="0.01"
+                            placeholder="0,00" inputmode="decimal">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Quantidade em estoque</mat-label>
+                    <input matInput
+                        type="number" 
+                        name="quantidadeEmEstoque"
+                        [(ngModel)]="materialSelecionado.quantidadeEmEstoque"
+                        required
+                        placeholder="0" inputmode="numeric">
+                </mat-form-field>
+            </div>
+
+            <div class="submit-buttons">
+                <button matButton="outlined" type="button" (click)="cancelarEdicao()">
+                    Cancelar
+                </button>
+
+                <button matButton="filled" type="submit" [disabled]="!formularioDeEdicao.valid">
+                    Salvar
+                </button>
+            </div>
+                
+        </form>
+    }
+
+</section>
