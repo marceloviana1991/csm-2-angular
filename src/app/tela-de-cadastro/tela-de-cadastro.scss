@@ -1,0 +1,16 @@
+img {
+    width: 60%;
+}
+
+.input-img-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3vh;
+    gap: 2vh;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
