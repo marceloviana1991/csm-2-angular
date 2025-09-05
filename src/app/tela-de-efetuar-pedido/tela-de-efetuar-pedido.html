@@ -1,5 +1,10 @@
 <section>
 
+    <h1>
+        Efetuar pedidos
+    </h1>
+    <hr>
+
     <div class="input-fields">
         <mat-form-field>
             <mat-label>Categoria</mat-label>
@@ -34,12 +39,9 @@
         <mat-card>
             <img mat-card-image [src]="imagem">
             <mat-card-content>
-                <p><b>Produto:</b> {{ materialSelecionado.nome }}</p>
-                <hr>
+                <p><span>{{ materialSelecionado.nome }}</span></p>
                 <p><b>Valor unitário :</b> {{ materialSelecionado.preco | currency:'BRL'}}</p>
-                <hr>
                 <p><b>Disponível em estoque:</b> {{ materialSelecionado.quantidadeEmEstoque }}</p>
-                <hr>
             </mat-card-content>
             <mat-card-actions>
                 <mat-form-field>
