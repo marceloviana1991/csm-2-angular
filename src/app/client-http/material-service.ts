@@ -26,6 +26,10 @@ export class MaterialService {
     return this.http.get<Material[]>(`${environment.apiUrl}/materiais/grupos/compra/${grupoId}`)
   }
 
+  getByGrupoIdVenda(grupoId: number): Observable<Material[]> {
+    return this.http.get<Material[]>(`${environment.apiUrl}/materiais/grupos/venda/${grupoId}`)
+  }
+
   getImagemById(id: number): Observable<Blob> {
     return this.http.get(`${environment.apiUrl}/materiais/imagem/${id}`, { responseType: 'blob' })
   }

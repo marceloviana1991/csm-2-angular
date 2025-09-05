@@ -1,3 +1,22 @@
+<header>
+  <mat-toolbar>
+    <img src="na.png" style="height: 80%;">
+    <button matIconButton [matMenuTriggerFor]="menu">
+      <mat-icon style="color: white;">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+    <a mat-menu-item routerLink="/efetuar-pedido">Efetuar pedidos</a>
+    @if (autenticacaoService.estaAutenticado()) {
+      <a mat-menu-item routerLink="/confirmar-pedido">Confirmar pedidos</a>
+      <a mat-menu-item routerLink="/cadastrar">Cadastrar materiais</a>
+      <a mat-menu-item routerLink="/editar">Editar dados de materiais</a>
+    }
+    <a mat-menu-item routerLink="/login">Login</a>
+</mat-menu>
+
+  </mat-toolbar>
+</header>
+
 <main>
   <router-outlet/>
 </main>

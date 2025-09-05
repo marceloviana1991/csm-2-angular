@@ -1,0 +1,44 @@
+.input-fields {
+    margin-bottom: 3vh;
+    width: 100%;
+}
+
+mat-card {
+    width: 50%;
+    background-color: white;
+}
+
+p {
+    margin-top: 1vh;
+}
+
+mat-card-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card-content {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+table {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  background-color: white;
+  box-shadow: var(--mat-sys-level1);
+}
+
+@media (max-width: 768px) {
+  mat-card {
+    width: 70%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  mat-card {
+    width: 60%;
+  }
+}
+
+

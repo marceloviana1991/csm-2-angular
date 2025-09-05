@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Login } from '../client-http/model/login';
 import { TokenJwt } from '../client-http/model/token-jwt';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,8 @@ export class TelaDeLogin {
 
   constructor(
     private autenticacaoService: AutenticacaoService,
-    private snakbar: MatSnackBar
+    private snakbar: MatSnackBar,
+    private router: Router,
   ) {}
 
   onSubmit(formularioDeLogin: NgForm) {
@@ -38,6 +40,7 @@ export class TelaDeLogin {
         this.openSnackBar('Autenticação realizada com sucesso!')
         sessionStorage.setItem('token', token.token)
         formularioDeLogin.resetForm()
+        this.router.navigate(['/confirmar-pedido']);
       },
       error: () => {
         this.openSnackBar('Falha na autenticação!')
