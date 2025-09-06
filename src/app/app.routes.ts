@@ -9,7 +9,7 @@ import { TelaDeConfirmarPedido } from './tela-de-confirmar-pedido/tela-de-confir
 export const routes: Routes = [
     {path:'', redirectTo:'/efetuar-pedido', pathMatch:'full'},
     {path: "cadastrar", component: TelaDeCadastro, canActivate: [authGuard]},
-    {path: "login", component: TelaDeLogin},
+    {path: "logar", component: TelaDeLogin},
     {path: "editar", component: TelaDeEdicao, canActivate: [authGuard]},
     {path: "efetuar-pedido", component: TelaDeEfetuarPedido},
     {path: "confirmar-pedido", component: TelaDeConfirmarPedido, canActivate: [authGuard]},

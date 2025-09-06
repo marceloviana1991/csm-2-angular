@@ -45,7 +45,7 @@ ${itensMensagem}
 Para concluir, por favor, realize o pagamento via Pix.
 
 *Chave Pix (Celular):*
-${telefone.telefone}`
+${telefone.telefone.slice(2)}`
       const mensagemCodificada = encodeURIComponent(mensagemWhatsapp)
       const url = `https://api.whatsapp.com/send?phone=${telefone.telefone}&text=${mensagemCodificada}`;
       window.open(url, '_blank');
